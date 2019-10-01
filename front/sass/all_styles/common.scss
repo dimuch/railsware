@@ -1,0 +1,200 @@
+body {
+  font-size: 16px;
+  background-color: $page-back;
+  font-family: 'ProximaNovaRegular', sans-serif;
+}
+
+.calendar-wrapper {
+  display: flex;
+  width: 90%;
+  max-width: 1060px;
+  min-height: 600px;
+  margin: 40px auto;
+}
+
+.event-short-data, .event-date-data {
+  background-color: $white;
+  border-radius: 8px;
+  border: 1px solid $data-block-border;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.event-short-data {
+  flex-direction: column;
+  min-width: 300px;
+  padding: 25px 10px 25px 30px;
+  margin-right: 12px;
+}
+
+.event-date-data {
+  flex: 1 1 50%;
+  padding-top: 28px;
+  padding-bottom: 0;
+  align-items: flex-start;
+
+  .block-caption {
+    padding-left: 35px;
+  }
+}
+
+.event-logo {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 45px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.event-short-name, .event-short-fullname, .event-duration {
+  margin-bottom: 10px;
+}
+
+.event-location {
+  margin-bottom: 15px;
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    margin-right: 10px;
+    color: $title-h4;
+    font-size: 20px;
+  }
+}
+
+.block-caption {
+  margin-bottom: 20px;
+}
+
+.event-date-params {
+  display: flex;
+  align-items: flex-start;
+}
+
+.event-date-details {
+  position: relative;
+  width: 60%;
+  padding-right: 20px;
+  padding-left: 20px;
+  .sub-block-caption{
+    margin-left: 15px;
+  }
+}
+
+.sub-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  height: 38px;
+  line-height: 38px;
+
+  .sub-block-caption {
+    font-weight: 400;
+    color: $title-h2;
+  }
+}
+
+.next-prev-month {
+  display: flex;
+  align-items: center;
+}
+
+.event-time-details {
+  width: 40%;
+}
+
+.possible-hours {
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 32px;
+  padding-bottom: 15px;
+  ul {
+    li {
+      height: 52px;
+      line-height: 52px;
+      text-align: center;
+      border: 1px solid $possible-hours-border;
+      border-radius: 4px;
+      margin-bottom: 10px;
+
+      &:hover {
+        border-width: 2px;
+        border-color: $active;
+        cursor: pointer;
+      }
+      .icon-button{
+        &:hover{
+          background-color: $white;
+        }
+      }
+    }
+  }
+}
+
+.timezone-placeholder{
+  height: 32px;
+  margin-left: 5px;
+  padding: 6px 10px;
+  border-radius: 16px;
+  display: inline-block;
+  &:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  .timezone-search{
+    display: flex;
+    padding: 20px 20px 10px 20px;
+    input{
+      padding: 12px;
+      width: 100%;
+      border: 1px solid $timezone-window-border-color;
+      font-size: 16px;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+  .timezone-time-format{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    padding: 20px 20px 10px;
+    text-transform: uppercase;
+    .caption{
+      font-weight: 700;
+    }
+  }
+  .timezone-list-wrapper{
+    overflow-y: scroll;
+    max-height: 168px;
+    font-size: 14px;
+    color: $title-h2;
+    .timezone-parent{
+      font-weight: 700;
+      padding: 10px 20px;
+    }
+  }
+
+  .timezone-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-weight: 400;
+    &:hover{
+      background-color: $data-block-border;
+      cursor: pointer;
+    }
+    &.timezone-selected{
+      color: $white;
+      background-color: $active;
+    }
+  }
+}

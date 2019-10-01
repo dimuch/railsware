@@ -1,0 +1,128 @@
+$darkgray: #808080;
+$gray: #B3B2B3;
+$lightgray: #E5E5E4;
+
+$darkblue: #115980;
+$blue: #2A95D2;
+$lightblue: #92D9F8;
+
+.timezone-placeholder {
+  input[type="checkbox"].checkbox-toggle {
+    position: absolute;
+    left: -9999px;
+    visibility: hidden;
+
+  }
+
+  label.checkbox-toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $title-h4;
+    position: relative;
+    z-index: 11;
+
+    .icon-earth {
+      position: relative;
+      top: 2px;
+      color: $title-h4;
+      font-size: 14px;
+      margin-right: 15px;
+    }
+
+    h4 {
+      font-size: 14px;
+      margin-right: 15px;
+    }
+
+    .switch {
+      text-align: center;
+      transition: all .3s ease-in;
+    }
+
+  }
+  .timezone-list {
+    display: none;
+    position: absolute;
+    bottom: 35px;
+    left: 10px;
+    right: 10px;
+    height: 300px;
+    border: 1px solid $timezone-window-border-color;
+    background-color: $white;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px 0 $timezone-window-border-color;
+    z-index: 10;
+  }
+  input.checkbox-toggle {
+    visibility: hidden;
+
+    &:checked + label.checkbox-toggle-label .switch {
+      transform: rotate(180deg) translateY(1px);
+    }
+
+    &:checked ~ .timezone-list {
+      display: block;
+    }
+  }
+}
+
+.timezone-time-format-switch{
+  padding: 6px 10px;
+  border-radius: 14px;
+  &:hover{
+    background-color: rgba(0,0,0,.1);
+    outline: none;
+  }
+  span{
+    text-transform: initial;
+    font-size: 14px;
+    font-weight: 400;
+    color: $title-h2;
+  }
+  .am-pm-caption{
+    padding-right: 10px;
+  }
+  .checkbox-toggle-slider {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+    &+label {
+      position: relative;
+      cursor: pointer;
+    }
+  }
+
+  .toggle-slider-path {
+    position: relative;
+    margin-right: 5px;
+    content: '';
+    display: inline-block;
+    vertical-align: text-top;
+    width: 40px;
+    height: 15px;
+    border-radius: 8px;
+    background-color: $data-block-border;
+  }
+
+  .toggle-selector {
+    height: 22px;
+    width: 22px;
+    z-index: 100;
+    position: absolute;
+    border-radius: 50%;
+    top: -4px;
+    left: -5px;
+    background-color: $white;
+    border: 1px solid $timezone-window-border-color;
+    cursor: pointer;
+    transition: all 300ms ease;
+  }
+  .checkbox-toggle-slider {
+    &:checked + label .toggle-selector{
+      left: 50%;
+    }
+  }
+
+}

@@ -1,0 +1,36 @@
+button {
+  &.icon-button {
+    height: 38px;
+    width: 38px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: $white;
+
+    &:before {
+      font-size: 20px;
+      color: $active;
+    }
+
+    &:hover {
+      background-color: $onhover;
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.icon-button-passive {
+      &:before {
+        color: $title-h4;
+      }
+
+      &:hover {
+        cursor: default;
+        background-color: $white;
+      }
+    }
+  }
+
+}

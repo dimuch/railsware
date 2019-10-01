@@ -1,0 +1,55 @@
+//calendar block
+.calendar-block{
+  margin-bottom: 20px;
+  table{
+    width: 100%;
+    table-layout: fixed;
+    th .calendar-table-header{
+      text-transform: uppercase;
+      color: $title-h2;
+      font-size: 12px;
+      font-weight: 400;
+      font-family: 'ProximaNovaRegular', sans-serif;
+    }
+    td{
+      text-align: center;
+      .icon-button {
+        width: 44px;
+        height: 44px;
+        margin: 4px;
+        font-size: 16px;
+      }
+    }
+  }
+  .active-day{
+    color: $active;
+    font-weight: 600;
+    background-color: $calendar-active-day-background;
+  }
+  .passive-day{
+    color: $title-h4;
+    background-color: $white;
+    &:hover{
+      cursor: default;
+      background-color: $white;
+    }
+  }
+  .today-day{
+
+  }
+  .selected-day{
+    color: $white;
+    font-weight: 600;
+    background-color: $active;
+    &:hover{
+      background-color: $active;
+    }
+  }
+  .empty-data{
+    background-color: $white;
+    &:hover{
+      cursor: default;
+      background-color: $white;
+    }
+  }
+}
