@@ -11,19 +11,13 @@ let gulp = require("gulp"),
 let buildDir = 'build/';
 let sourceDir = 'front/';
 
-gulp.task('server', ['default'], function(done) {
-  http.createServer(
-    st({ path: __dirname + '/build', index: 'index.html', cache: false })
-  ).listen(8080, done);
-});
-
-gulp.task("delBuildDir", function(){
+gulp.task("delBuildDir", async function(){
     return del([
       buildDir + "css/", buildDir + "js/"
     ])
 });
 
-gulp.task("htmlmin", function() {
+gulp.task("htmlmin", async function() {
     return gulp.src([
       sourceDir + "*.html", sourceDir + "**/*.html",
       sourceDir + "!sass/*", sourceDir + "!fonts/*"
@@ -38,7 +32,7 @@ gulp.task("htmlmin", function() {
     .pipe(livereload());
 });
 
-gulp.task('sass', function () {
+gulp.task('sass', async function () {
   return gulp.src(sourceDir + 'sass/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(cssnano({
@@ -50,17 +44,12 @@ gulp.task('sass', function () {
     .pipe(livereload());
 });
 
-gulp.task('copyAssets', function() {
+gulp.task('copyAssets', async function() {
     gulp.src(sourceDir + 'images/**/*').pipe(gulp.dest(buildDir + 'images'));
     gulp.src(sourceDir + 'fonts/*').pipe(gulp.dest(buildDir + 'fonts'));
 });
 
-gulp.task('empty_icon_file', function emptyIconFile () {
-  return gulp.src(['./front/fonts/svg-for-icons-fonts/_icons.scss'])
-    .pipe(gulp.dest('./front/sass/all_styles/'));
-});
-
-gulp.task('icons_font_generation', ['empty_icon_file'], function iconsFontGeneration() {
+gulp.task('icons_font_generation',  async function iconsFontGeneration() {
   let iconsFiles = './front/fonts/svg-for-icons-fonts/*.svg';
   let iconfontCss = require('gulp-iconfont-css');
   let iconfont = require('gulp-iconfont');
@@ -81,18 +70,24 @@ gulp.task('icons_font_generation', ['empty_icon_file'], function iconsFontGenera
     .pipe(gulp.dest('build/fonts'));
 });
 
-gulp.task("build", function(){
-  gulp.start('delBuildDir', 'copyAssets', 'icons_font_generation', 'sass', 'htmlmin');
-});
-
+gulp.task("build", gulp.series('delBuildDir', 'copyAssets', 'icons_font_generation', 'sass', 'htmlmin'));
 
 //watch for changes
-gulp.task('default', ['build'], function() {
+gulp.task('default', gulp.series('build', async function(done) {
   livereload.listen({ basePath: 'build' });
 
-  gulp.watch(sourceDir + 'sass/**/*.scss', ['sass']);
+  gulp.watch(sourceDir + 'sass/**/*.scss', gulp.series('sass'));
 
-  gulp.watch(sourceDir + '*.html', ['htmlmin']);
+  gulp.watch(sourceDir + '*.html', gulp.series('htmlmin'));
 
-  gulp.watch([sourceDir + 'fonts/*', sourceDir + 'images/*'], ['icons_font_generation', 'copyAssets']);
-});
+  gulp.watch([sourceDir + 'fonts/*', sourceDir + 'images/*'], gulp.series('icons_font_generation', 'copyAssets'));
+
+  done();
+}));
+
+gulp.task('server', gulp.series('default', async function(done) {
+  return http.createServer(
+    st({ path: __dirname + '/build', index: 'index.html', cache: false })
+  ).listen(8080, done);
+}));
+

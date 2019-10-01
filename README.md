@@ -1,7 +1,7 @@
 
 # Calendar - Railware test task
 
-##### Note: gulp was chosen cause the same configuration was used before for another test task. Please use NodeJS v8(NodeJS v12 does not supported)
+##### Note: gulp was chosen cause the same configuration was used before for another test task. Tested on NodeJS v12, gulp CLI version: 2.2.0 Local version: 4.0.2
 
 ## How to use
 - run ```npm install```
