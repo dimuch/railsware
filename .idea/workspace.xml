@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e80d19f3-d914-4040-98ba-e8636b32e9b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/fonts/RailsWareIcons.eot" beforeDir="false" afterPath="$PROJECT_DIR$/build/fonts/RailsWareIcons.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/fonts/RailsWareIcons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/build/fonts/RailsWareIcons.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/fonts/RailsWareIcons.woff" beforeDir="false" afterPath="$PROJECT_DIR$/build/fonts/RailsWareIcons.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/fonts/RailsWareIcons.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/build/fonts/RailsWareIcons.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/sass/all_styles/adaptive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front/sass/all_styles/adaptive.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/sass/all_styles/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front/sass/all_styles/common.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +68,8 @@
       <option name="presentableId" value="Default" />
       <updated>1569791883003</updated>
       <workItem from="1569791884192" duration="11169000" />
-      <workItem from="1569870334796" duration="24957000" />
+      <workItem from="1569870334796" duration="25277000" />
+      <workItem from="1569956625536" duration="1433000" />
     </task>
     <servers />
   </component>
@@ -74,7 +81,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

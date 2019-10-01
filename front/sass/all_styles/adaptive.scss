@@ -1,22 +1,37 @@
-@media all and (max-width: 1040px){
+@media all and (max-width: 1023px){
   .calendar-wrapper{
     display: block;
     border: 1px solid $data-block-border;
     box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.08);
-    .event-short-data{
-      margin-right: 0;
-      border: none;
-      box-shadow: none;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+  }
+  .event-short-data{
+    margin-right: 0;
+    padding: 15px;
+    border: none;
+    box-shadow: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 
+  }
+  .event-date-data{
+    padding: 20px 15px 15px 15px;
+    border: none;
+    border-top: 1px solid $data-block-border;
+    box-shadow: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    .block-caption{
+      padding-left: 0;
     }
-    .event-date-data{
-      border: none;
-      border-top: 1px solid $data-block-border;
-      box-shadow: none;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
+    .event-date-details{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  .timezone-placeholder{
+    margin-bottom: 20px;
+    .timezone-list{
+      bottom: 60px;
     }
   }
 }
@@ -43,6 +58,12 @@
   .event-date-details, .event-date-params, .event-time-details{
     display: block;
     margin: auto;
-    width: 90%;
+  }
+  .event-date-details, .event-time-details {
+    width: 100%;
+    padding: 0;
+  }
+  .event-time-details{
+    margin-left: 13px;
   }
 }
