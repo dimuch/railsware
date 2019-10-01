@@ -10,4 +10,4 @@
 
 ## Auto-reload
 To enable auto-reload please install <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en">LiveReload extension for Chrome</a> 
-or for browser that you are prefer
+or for browser you are prefer
