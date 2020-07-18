@@ -19,7 +19,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "st": "^1.2.2"
   }
 }
